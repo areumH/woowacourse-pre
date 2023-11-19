@@ -1,0 +1,16 @@
+[submodule "pre-6/baseball"]
+	path = pre-6/baseball
+	url = https://github.com/areumH/javascript-baseball-6.git
+	branch = areumH
+[submodule "pre-6/racingcar"]
+	path = pre-6/racingcar
+	url = https://github.com/areumH/javascript-racingcar-6.git
+	branch = areumH
+[submodule "pre-6/lotto"]
+	path = pre-6/lotto
+	url = https://github.com/areumH/javascript-lotto-6.git
+	branch = areumH
+[submodule "pre-6/christmas"]
+	path = pre-6/christmas
+	url = https://github.com/areumH/javascript-christmas-6-areumH.git
+	branch = main
