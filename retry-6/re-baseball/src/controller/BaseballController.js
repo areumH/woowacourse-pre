@@ -15,11 +15,16 @@ class BaseballController {
     this.#OutputView.printStartMessage();
 
     const user = await this.#getUserNumber();
+    const computer = this.#getComputerNumber();
   }
 
   async #getUserNumber() {
     const input = await this.#InputView.getInputNumber();
     return new BaseballModel(input);
+  }
+
+  #getComputerNumber() {
+    return BaseballModel.getComputerNumber();
   }
 }
 

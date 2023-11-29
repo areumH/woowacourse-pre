@@ -1,3 +1,5 @@
+import { Random } from "@woowacourse/mission-utils";
+import { BASEBALL } from "../constants/constants.js";
 import { ERROR_MESSAGE } from "../constants/messages.js";
 
 import Validator from "../validators/Validator.js";
@@ -20,6 +22,15 @@ class BaseballModel {
     if (Validator.checkDuplicates(numbers)) {
       throw new Error(ERROR_MESSAGE.HAS_DUPLICATES);
     }
+  }
+
+  static getComputerNumber() {
+    const computer = [];
+    while (computer.length < BASEBALL.LENGTH) {
+      const number = Random.pickNumberInRange(BASEBALL.MIN, BASEBALL.MAX);
+      if (!computer.includes(number)) computer.push(number);
+    }
+    return computer;
   }
 }
 
