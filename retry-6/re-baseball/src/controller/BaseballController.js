@@ -13,9 +13,19 @@ class BaseballController {
 
   async startGame() {
     this.#OutputView.printStartMessage();
-
-    const user = await this.#getUserNumber();
     const computer = this.#getComputerNumber();
+
+    while (true) {
+      const user = await this.#getUserNumber();
+
+      const result = user.compareBaseball(computer);
+      const answer = this.#OutputView.printResultMessage(result);
+
+      if (answer) {
+        this.#OutputView.printWinningMessage();
+        break;
+      }
+    }
   }
 
   async #getUserNumber() {
