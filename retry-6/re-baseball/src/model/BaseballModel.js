@@ -1,27 +1,20 @@
 import { Random } from "@woowacourse/mission-utils";
 import { BASEBALL } from "../constants/constants.js";
-import { ERROR_MESSAGE } from "../constants/messages.js";
 
 import Validator from "../validators/Validator.js";
 
 class BaseballModel {
-  #numbers;
+  #number;
 
-  constructor(numbers) {
-    this.#validateNumbers(numbers);
-    this.#numbers = numbers;
+  constructor(number) {
+    this.#validateNumbers(number);
+    this.#number = number;
   }
 
-  #validateNumbers(numbers) {
-    if (Validator.checkIsNotInteger(numbers)) {
-      throw new Error(ERROR_MESSAGE.INVALID_INTEGER);
-    }
-    if (Validator.checkNumberLength(numbers)) {
-      throw new Error(ERROR_MESSAGE.INVALID_LENGTH);
-    }
-    if (Validator.checkDuplicates(numbers)) {
-      throw new Error(ERROR_MESSAGE.HAS_DUPLICATES);
-    }
+  #validateNumbers(number) {
+    Validator.checkIsNotInteger(number);
+    Validator.checkNumberLength(number);
+    Validator.checkDuplicates(number);
   }
 
   static getComputerNumber() {

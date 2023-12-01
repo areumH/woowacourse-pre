@@ -1,17 +1,20 @@
 import { BASEBALL } from "../constants/constants.js";
+import { ERROR_MESSAGE } from "../constants/messages.js";
 
 const Validator = {
   checkIsNotInteger(input) {
-    return isNaN(input);
+    if (isNaN(input)) throw new Error(ERROR_MESSAGE.INVALID_INTEGER);
   },
 
   checkNumberLength(input) {
-    return input.length !== BASEBALL.LENGTH;
+    if (input.length !== BASEBALL.LENGTH)
+      throw new Error(ERROR_MESSAGE.INVALID_LENGTH);
   },
 
-  checkDuplicates(input)  {
-    return new Set(input).size !== BASEBALL.LENGTH;
-  }
+  checkDuplicates(input) {
+    if (new Set(input).size !== BASEBALL.LENGTH)
+      throw new Error(ERROR_MESSAGE.HAS_DUPLICATES);
+  },
 };
 
 export default Validator;
