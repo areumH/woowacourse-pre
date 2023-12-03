@@ -1,8 +1,8 @@
-import BaseballController from "./controller/BaseballController.js";
+import GameController from "./controller/GameController.js";
 
 class App {
   async play() {
-    const controller = new BaseballController();
+    const controller = new GameController();
     await controller.startGame();
   }
 }

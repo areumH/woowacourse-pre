@@ -5,27 +5,28 @@ import OutputView from "../view/OutputView.js";
 class BaseballController {
   #InputView;
   #OutputView;
+  
+  #match;
 
   constructor() {
     this.#InputView = new InputView();
     this.#OutputView = new OutputView();
+    
+    this.#match = false;
   }
 
-  async startGame() {
-    this.#OutputView.printStartMessage();
+  async startBaseball() {
     const computer = this.#getComputerNumber();
 
-    while (true) {
+    do {
       const user = await this.#getUserNumber();
-
+  
       const result = user.compareBaseball(computer);
-      const answer = this.#OutputView.printResultMessage(result);
+      this.#match = this.#OutputView.printResultMessage(result);
+      
+    } while (!this.#match);
 
-      if (answer) {
-        this.#OutputView.printWinningMessage();
-        break;
-      }
-    }
+    this.#OutputView.printWinningMessage();
   }
 
   async #getUserNumber() {
