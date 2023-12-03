@@ -17,6 +17,7 @@ const ERROR_MESSAGE = Object.freeze({
   INVALID_INTEGER: "[ERROR] 숫자 형식이 아닙니다.",
   INVALID_LENGTH: "[ERROR] 입력 값은 3자리의 숫자여야 합니다.",
   HAS_DUPLICATES: "[ERROR] 중복된 숫자가 존재합니다.",
+  INVALID_RANGE: "[ERROR] 올바른 숫자가 아닙니다.",
 });
 
 export { INPUT_MESSAGE, OUTPUT_MESSAGE, ERROR_MESSAGE };

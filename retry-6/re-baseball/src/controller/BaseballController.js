@@ -20,10 +20,9 @@ class BaseballController {
 
     do {
       const user = await this.#getUserNumber();
-  
       const result = user.compareBaseball(computer);
+
       this.#match = this.#OutputView.printResultMessage(result);
-      
     } while (!this.#match);
 
     this.#OutputView.printWinningMessage();
